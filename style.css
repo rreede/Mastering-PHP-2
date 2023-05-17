@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  font-family: arial;
+  padding: 0;
+}
+
+.wrapper {
+  background: white;
+  width: 980px;
+  margin: 50px auto;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: 3px 3px 9px rgb(237, 237, 237);
+}
+
+.top-header {
+  padding: 25px;
+  border-bottom: 1px solid lightgray;
+  border-top-left-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-top-right-radius: 10px;
+}
+
+.main {
+  padding: 25px;
+}
+
+.add-button {
+  background: #2ecc71;
+  width: 100px;
+  height: 25px;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  line-height: 25px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+table td {
+  padding: 12.5px 12.5px;
+}
+
+table tr {
+  text-align: center;
+}
+
+table td {
+  text-align: left;
+}
+
+input[type="text"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+input[type="number"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+input[type="select"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+button {
+}
+
+.delete {
+  color: white;
+  background: red;
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+}
+
+.update {
+  color: white;
+  padding: 6px;
+  background: #2ecc71;
+  border: none;
+  border-radius: 5px;
+}
