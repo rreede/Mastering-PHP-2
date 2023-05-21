@@ -1,4 +1,6 @@
 <?php include("config.php");?>
+<?php include("pagination.php");?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +41,7 @@
 
 
 <tr>
-<td><strong>#</strong></td> 
+<td><strong> </strong></td> 
   <td><strong>Item</strong></td>
   <td><strong>Quantity</strong></td> 
   <td><strong>Category</strong></td>
@@ -49,7 +51,10 @@
 </tr>
         <?php
 
-$sql = "SELECT * FROM test_table";
+        $start_number = 0;
+        $rows_per_page = 5;
+
+$sql = "SELECT * FROM test_table LIMIT $start_number,$rows_per_page";
 $res = mysqli_query($conn, $sql);
 
 $count= 1;
@@ -93,6 +98,8 @@ if(mysqli_num_rows($res) > 0) {
 }
 
 
+
+
 ?>
 
 
@@ -100,8 +107,66 @@ if(mysqli_num_rows($res) > 0) {
 </table>
 
 </div>
+
 </div>
 
+<div class="pagination-container">
+<div class="page-info">
+  Showing 1 of <?php $pages; ?>
+</div>
+
+<div class="pagination">
+  <!-- Go to the first page -->
+<a href="?page-nr=1">First Page</a>
+
+  <!-- Go to the first page -->
+
+<?php 
+  if(isset($_GET['page-nr']) && $_GET['page-nr'] > 1) { ?>
+
+    <a href="?page-nr=<?php echo $_GET['page-nr'] - 1 ?>">Previous Page</a> 
+    <?php
+  } else {
+    ?>
+  <a>Previous</a>
+
+<?php
+
+  }
+?>
+
+
+
+
+<div class="page-numbers">
+
+  <a href="">1</a>
+  <a href="">2</a>
+  <a href="">3</a>
+  <a href="">4</a>
+  <a href="">5</a>
+  <a href="">6</a>
+
+  <?php 
+  if(isset($_GET['page-nr']) && $_GET['page-nr'] > 1) { ?>
+
+<a href="?page-nr=<?php echo $_GET['page-nr'] - 1 ?>">Next Page</a> 
+<?php
+} else {
+?>
+<a>Next</a>
+
+
+
+}
+
+  <a href="">Last Page</a>
+
+</div>
+
+</div>
+
+</div>
 
 
 </body>

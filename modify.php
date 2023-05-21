@@ -48,6 +48,12 @@ $id = $_GET["id"];
 
 <h1>⚙️ Modify Entry</h1>
 
+<div class="functions"> <a href="index.php"><div class="add-button">
+        Homepage
+    </div></a>
+
+</div>
+
 </div>
 <div class="main">
 <form action="" method="POST">
@@ -80,7 +86,7 @@ if(isset($_POST["submit"])) {
     $item_name = $_POST["item_name"];
     $item_quantity = $_POST["item_quantity"];
     $item_category = $_POST["item_category"];
-    $item_description = $row["item_description"];
+    $item_description = $_POST["item_description"];
 
     $sql = "UPDATE test_table SET item_name = '$item_name', item_category = '$item_category', item_quantity='$item_quantity', item_description='$item_description' WHERE id=$id";
 

@@ -16,6 +16,12 @@
 
 <h1>➕ Add Item</h1>
 
+<div class="functions"> <a href="index.php"><div class="add-button">
+        Homepage
+    </div></a>
+
+</div>
+
 </div>
 <div class="main">
 
